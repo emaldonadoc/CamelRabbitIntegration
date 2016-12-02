@@ -13,7 +13,7 @@ class TrakingRoute extends RouteBuilder {
 
   @Override
   void configure() throws Exception {
-    /* println "HOST ${host} ========== PORT ${port}"
+    println "HOST ${host} ========== PORT ${port}"
 
       restConfiguration()
           .component('jetty')
@@ -22,6 +22,6 @@ class TrakingRoute extends RouteBuilder {
 
       rest('/tracking')
           .get()
-              .constant("HELLO THERE");*/
+              .constant("HELLO THERE");
   }
  }
