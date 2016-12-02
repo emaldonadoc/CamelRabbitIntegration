@@ -1,0 +1,14 @@
+rest:
+  host: 0.0.0.0
+  port: 8080
+
+spring:
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: rtx_tracker
+ampq:
+    broker:
+        queue.name: rtx-tracker
+        exchange.name: rtx
