@@ -24,14 +24,11 @@ class TrakingRouteSpec {
 
         context.addRoutes(new RouteBuilder() {
             public void configure() {
-                //from("rabbitmq://localhost:5672?queue=rlx-tracker")
-                from("rabbitmq://localhost:5672/rtx")
+                from("rabbitmq://localhost:5672/railtronix")
                  .to("log:foo")
-                    //.process { "HELLO THERE!!!"}
             }
         });
 
-//        context.setTracing(true);
         context.start();
    }
 

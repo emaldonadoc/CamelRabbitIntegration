@@ -1,6 +1,15 @@
+spring.main.sources: com.railtronix.traker.camel.TrakingRoute
+
 rest:
-  host: 0.0.0.0
+  host: localhost
   port: 8080
+
+rabbitmq:
+  host: localhost
+  port: 5672
+  exchange: railtronix
+  queueTrack: track
+
 
 spring:
     data:
@@ -12,3 +21,7 @@ ampq:
     broker:
         queue.name: rtx-tracker
         exchange.name: rtx
+
+
+
+

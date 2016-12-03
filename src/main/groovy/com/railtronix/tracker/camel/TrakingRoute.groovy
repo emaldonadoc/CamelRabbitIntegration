@@ -10,42 +10,18 @@ import org.springframework.context.annotation.Bean;
 @Component
 class TrakingRoute extends RouteBuilder {
 
-  @Value('${rest.host}') String host
-  @Value('${rest.port}') String port
+  @Value('${rabbitmq.host}') String host
+  @Value('${rabbitmq.port}') String port
+  @Value('${rabbitmq.exchange}') String exchange
+  @Value('${rabbitmq.queueTrack}') String queue
 
 
   @Override
   void configure() throws Exception {
-    /*
-      restConfiguration()
-          .component('jetty')
-          .host(host).port(port)
-          .bindingMode(RestBindingMode.json)
-
-      rest('/tracking')
-          .get()
-              .constant("HELLO THERE");*/
-
-    from("rabbitmq://localhost?queue=rlx-tracker&durable=true&prefetch=1")
-      .constant("HELLO THERE !!!!!")
+    from("rabbitmq://${host}:${port}/${exchange}?autoDelete=false&queue=${queue}")
+      .to("stream:out") 
   }
+
 
  }
 
-/*
-class RabbitConf {
-
-  @Bean(destroyMethod = "destroy")
-  public ConnectionFactory rabbitConnectionFactory() {
-      CachingConnectionFactory factory = new CachingConnectionFactory(
-              "localhost",
-              5672
-      );
-
-      factory.setUsername("guest");
-      factory.setPassword("guest");
-
-      return factory;
-  }
-
-}*/

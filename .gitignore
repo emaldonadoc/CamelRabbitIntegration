@@ -1,4 +1,4 @@
-
+*.swp
 .classpath
 .gradle/*
 .project
