@@ -29,9 +29,13 @@ targetCompatibility = 1.8
 dependencies {
   compile 'org.springframework.boot:spring-boot-starter-web'
   compile 'org.springframework.boot:spring-boot-starter-tomcat'
+  compile("org.springframework.boot:spring-boot-starter-amqp")
+  compile 'org.apache.camel:camel-rabbitmq:' + cammelVersion
   compile 'org.codehaus.groovy:groovy-all:2.4.5'
   compile 'org.apache.camel:camel-spring-boot-starter:2.17.0'
   compile 'org.apache.camel:camel-groovy:' + cammelVersion
   //compile 'org.apache.camel:camel-jetty:' + cammelVersion
+
+  testCompile('org.springframework.boot:spring-boot-starter-test')
 
 }
