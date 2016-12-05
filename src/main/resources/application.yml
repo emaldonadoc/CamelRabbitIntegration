@@ -7,8 +7,8 @@ rest:
 rabbitmq:
   host: localhost
   port: 5672
-  exchange: railtronix
-  queueTrack: track
+  exchange: rtx
+  queueTrack: rtx-tracker
 
 
 spring:
@@ -21,7 +21,3 @@ ampq:
     broker:
         queue.name: rtx-tracker
         exchange.name: rtx
-
-
-
-

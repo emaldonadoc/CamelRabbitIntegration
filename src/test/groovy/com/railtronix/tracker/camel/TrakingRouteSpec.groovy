@@ -24,7 +24,7 @@ class TrakingRouteSpec {
 
         context.addRoutes(new RouteBuilder() {
             public void configure() {
-                from("rabbitmq://localhost:5672/railtronix")
+                from("rabbitmq://localhost:5672/rtx")
                  .to("log:foo")
             }
         });
